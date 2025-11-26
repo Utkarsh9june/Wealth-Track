@@ -22,8 +22,6 @@ export const getDashboardData = async (req,res) => {
             date: { $gte: new Date(Date.now() - 30*24*60*60*1000)},
         }).sort({date: -1});
 
-        console.log(last30DaysIncomeTransactions)
-
         const incomeLast30Days = last30DaysIncomeTransactions.reduce(
             (sum, transaction) => sum + transaction.amount, 0
         );

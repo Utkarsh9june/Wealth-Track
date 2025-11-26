@@ -11,6 +11,9 @@ import { addThousandsSeperator } from '../../utils/helper';
 import RecentTransactions from '../../components/Dashboard/RecentTransactions';
 import FinanceOverview from '../../components/Dashboard/FinanceOverview';
 import ExpenseTransactions from '../../components/Dashboard/ExpenseTransactions';
+import Last30DaysExpenses from '../../components/Dashboard/Last30DaysExpenses';
+import RecentIncomeWithChart from '../../components/Dashboard/RecentIncomeWithChart';
+import RecentIncome from '../../components/Dashboard/RecentIncome';
 
 const Home = () => {
   useUserAuth();
@@ -53,7 +56,10 @@ const Home = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-6'>
           <RecentTransactions transactions={dashBoardData?.recentTransactions} onSeeMore={() => navigate("/expense")} />
           <FinanceOverview totalBalance={dashBoardData?.totalBalance || 0} totalIncome={dashBoardData?.totalIncome || 0} totalExpense={dashBoardData?.totalExpense} />
-          <ExpenseTransactions transactions={dashBoardData?.last30DaysExpenses.transactions || []} onSeeMore={() => navigate("/expense")} />
+          <ExpenseTransactions transactions={dashBoardData?.last30DaysExpenses?.transactions || []} onSeeMore={() => navigate("/expense")} />
+          <Last30DaysExpenses transactions={dashBoardData?.last30DaysExpenses?.transactions || []} />
+          <RecentIncomeWithChart data={dashBoardData?.last30DaysIncome?.transactions?.slice(0,4) || []} totalIncome={dashBoardData?.totalIncome || 0} />
+          <RecentIncome transactions={dashBoardData?.last30DaysIncome?.transactions || []} onSeeMore={() => navigate("/income")} />
         </div>
       </div>
     </DashboardLayout>
