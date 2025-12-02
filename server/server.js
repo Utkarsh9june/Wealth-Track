@@ -2,10 +2,10 @@ import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
-import connectDB from './config/db.js';
+import connectDB from './config/Db.js';
 import authRoutes from './routes/AuthRoutes.js';
 import incomeRoutes from './routes/incomeRoutes.js';
-import expenseRoutes from './routes/ExpenseRoutes.js';
+import expenseRoutes from './routes/expenseRoutes.js';
 import dashboardRoutes from './routes/DashboardRoutes.js';
 import { fileURLToPath } from 'url';
 

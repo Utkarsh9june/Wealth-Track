@@ -33,3 +33,5 @@ export const useUserAuth = () => {
         };
     }, [updateUser, clearUser, navigate]);
 };
+
+export default useUserAuth;

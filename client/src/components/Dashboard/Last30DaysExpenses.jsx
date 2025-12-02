@@ -12,10 +12,6 @@ const Last30DaysExpenses = ({transactions}) => {
     return () => {};
   }, [transactions]);
 
-  useEffect(() => {
-    console.log("ChartData", chartData);
-  })
-
   return (
     <div className='card col-span-1'>
       <div className='flex items-center justify-between'>
