@@ -24,3 +24,17 @@ dist-ssr
 *.sw?
 *node_modules
 *uploads
+
+#.env
+server/.env
+client/.env
+.env
+.env.local
+
+# Large unnecessary folders
+server/node_modules/
+client/node_modules/
+
+# Build folders
+client/dist/
+server/dist/
